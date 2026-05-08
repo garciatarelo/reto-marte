@@ -1,5 +1,9 @@
 // API Service - Gestionar todas las llamadas a Laravel
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
+const isProd = import.meta.env.PROD;
+const DEFAULT_PROD_URL = 'https://pamelatarelo18.alwaysdata.net/marsmatrix/api/api';
+const DEFAULT_DEV_URL = 'http://127.0.0.1:8000/api';
+
+const API_BASE_URL = import.meta.env.VITE_API_URL || (isProd ? DEFAULT_PROD_URL : DEFAULT_DEV_URL);
 
 async function fetchJson(url, options = {}) {
   const response = await fetch(url, options);
