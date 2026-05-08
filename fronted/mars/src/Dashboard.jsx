@@ -66,14 +66,14 @@ function Dashboard() {
           <header className="topbar panel" ref={dashboardRef}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                <h1 style={{ margin: 0, fontSize: '1.6rem', color: '#ff8a2b', fontWeight: '800', letterSpacing: '1px' }}>MARS MATRIX</h1>
-                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'radial-gradient(circle at 50% 50%, #0d131f 0%, #06090f 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid #ff6a10', boxShadow: '0 0 15px rgba(255, 106, 16, 0.4), inset 0 0 10px rgba(255, 106, 16, 0.2)' }}>
-                  <img src={teamLogo} alt="Logo de Mars Matrix" style={{ borderRadius: '50%', width: '60px', height: '60px', objectFit: 'contain', filter: 'drop-shadow(0 0 5px rgba(255, 106, 16, 0.5))' }} />
+                <h1 style={{ margin: 0, fontSize: '1.6rem', color: '#ff4500', fontWeight: '800', letterSpacing: '1px' }}>M.Y.C.O</h1>
+                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '2px solid #ff4500', boxShadow: '0 4px 12px rgba(255, 69, 0, 0.15)' }}>
+                  <img src={teamLogo} alt="Logo de Mars Matrix" style={{ borderRadius: '50%', width: '60px', height: '60px', objectFit: 'contain', filter: 'contrast(1.1) saturate(1.1)' }} />
                 </div>
               </div>
               <div style={{ borderLeft: '1px solid #2f3746', paddingLeft: '20px' }}>
-                <h2 style={{ margin: 0, fontSize: '1.1rem', color: '#fff' }}>Gemelo Digital de Remediacion</h2>
-                <p style={{ margin: '2px 0 0', fontSize: '0.8rem', color: '#aaa' }}>Control de red biologica y monitoreo de mision</p>
+                <h2 style={{ margin: 0, fontSize: '1.1rem', color: '#fff' }}>Plataforma de simulación de remediación</h2>
+                <p style={{ margin: '2px 0 0', fontSize: '0.8rem', color: '#aaa' }}>Control de red biológica y monitoreo de misión</p>
               </div>
             </div>
             <div className="topbar-actions">
@@ -81,13 +81,11 @@ function Dashboard() {
                 className="btn-primary" 
                 onClick={triggerIA} 
                 disabled={iaLoading} 
-                style={{ background: '#ff3a5d', color: '#fff', fontWeight: 'bold', border: '1px solid #ff708c', boxShadow: '0 0 10px rgba(255,58,93,0.5)' }}
               >
                 {iaLoading ? 'Ejecutando...' : 'Activar IA Remediación'}
               </button>
               <button className="btn-primary" onClick={() => setModalOpen(true)}>Generar Ruta</button>
               <button className="btn-soft" type="button" onClick={() => setRobotModalOpen(true)}>Agregar Robot</button>
-              <span className="sol-tag">SOL 341</span>
             </div>
           </header>
 
@@ -107,7 +105,7 @@ function Dashboard() {
             <aside className="right-column">
               <section className="panel kpi-panel">
                 <h3>
-                  Simulacion IA y Gemelo Digital
+                  Simulación IA y Gemelo Digital
                   <span style={{ fontSize: '0.8em', color: '#ff8a2b', marginLeft: '8px' }}>
                     {selectedRouteId ? `(Ruta #${selectedRouteId})` : '(Global)'}
                   </span>
@@ -116,14 +114,14 @@ function Dashboard() {
               </section>
 
               <section className="panel info-panel" ref={simulationRef}>
-                <h3>Estado de Mision</h3>
+                <h3>Estado de Misión</h3>
                 <ul>
                   <li>
                     <span>Estado del sistema</span>
                     <strong className="online">Online</strong>
                   </li>
                   <li>
-                    <span>Version</span>
+                    <span>Versión</span>
                     <strong>v1.1.0</strong>
                   </li>
                   <li>
@@ -145,8 +143,8 @@ function Dashboard() {
           </section>
 
           <section className="panel info-panel" ref={configRef}>
-            <h3>Configuracion</h3>
-            <p className="state-msg">Aqui puedes ajustar la mision, los mapas y la simulacion. Por ahora la accion visible es navegar a los bloques principales.</p>
+            <h3>Configuración</h3>
+            <p className="state-msg">Aquí puedes ajustar la misión, los mapas y la simulación. Por ahora la acción visible es navegar a los bloques principales.</p>
           </section>
         </main>
         <GenerateRutaModal

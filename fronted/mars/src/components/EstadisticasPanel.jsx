@@ -29,15 +29,15 @@ export function EstadisticasPanel({ selectedRouteId }) {
   }
 
   if (loading) {
-    return <div className="state-msg">Cargando estadisticas...</div>;
+    return <div className="state-msg">Cargando estadísticas...</div>;
   }
 
   if (error) {
-    return <div className="state-msg error">Error de estadisticas: {error}</div>;
+    return <div className="state-msg error">Error de estadísticas: {error}</div>;
   }
 
   if (!stats) {
-    return <div className="state-msg">Sin datos todavia.</div>;
+    return <div className="state-msg">Sin datos todavía.</div>;
   }
 
   return (

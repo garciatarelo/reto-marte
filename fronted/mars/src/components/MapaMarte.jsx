@@ -250,20 +250,20 @@ export function MapaMarte({
   }
 
   function colorRuta(estado) {
-    if (estado === 'completada') return '#45f4bc';
+    if (estado === 'completada') return '#ffc107';
     if (estado === 'en-progreso') return '#47d6ff';
     if (estado === 'cancelada') return '#ff7070';
     return '#ff8a2b';
   }
 
   function colorRutaGenerada() {
-    if (routeStatus === 'completada') return '#45f4bc';
+    if (routeStatus === 'completada') return '#ffc107';
     if (routeStatus === 'en-progreso') return '#47d6ff';
     return '#ffd24d';
   }
 
   function colorPorIndice(index, selected = false) {
-    const palette = ['#45f4bc', '#47d6ff', '#ffd24d', '#ff8a2b', '#b08cff', '#ff7070'];
+    const palette = ['#ffc107', '#47d6ff', '#ffd24d', '#ff8a2b', '#b08cff', '#ff7070'];
     return selected ? '#ffffff' : palette[index % palette.length];
   }
 
@@ -458,7 +458,7 @@ export function MapaMarte({
               <Polyline 
                 key={`red-${idx}`} 
                 positions={linePoints} 
-                pathOptions={{ color: '#56ffd2', weight: 1.5, opacity: 0.4, dashArray: '4 4' }} 
+                pathOptions={{ color: '#e2d5c4', weight: 1.5, opacity: 0.4, dashArray: '4 4' }} 
               />
             ))}
 
@@ -507,14 +507,14 @@ export function MapaMarte({
                     center={[bio.latitud_marte, bio.longitud_marte]}
                     radius={5}
                     pathOptions={{
-                      color: '#56ffd2',
-                      fillColor: '#56ffd2',
+                      color: '#e2d5c4',
+                      fillColor: '#e2d5c4',
                       fillOpacity: 0.65,
                       weight: 1,
                     }}
                   >
                     <Tooltip>
-                      Biopolimero #{bio.id} - crecimiento {bio.nivel_crecimiento}%
+                      Biopolímero #{bio.id} - crecimiento {bio.nivel_crecimiento}%
                     </Tooltip>
                   </CircleMarker>
                 );
@@ -538,8 +538,8 @@ export function MapaMarte({
                         center={point}
                         radius={isStart || isEnd ? 6 : 3}
                         pathOptions={{
-                          color: isStart ? '#56ffd2' : isEnd ? '#ff8a2b' : '#ffd24d',
-                          fillColor: isStart ? '#56ffd2' : isEnd ? '#ff8a2b' : '#ffd24d',
+                          color: isStart ? '#e2d5c4' : isEnd ? '#ff8a2b' : '#ffd24d',
+                          fillColor: isStart ? '#e2d5c4' : isEnd ? '#ff8a2b' : '#ffd24d',
                           fillOpacity: 0.95,
                           weight: 1,
                         }}
@@ -557,8 +557,8 @@ export function MapaMarte({
                       center={point}
                       radius={8}
                       pathOptions={{
-                        color: '#9dff6a',
-                        fillColor: '#9dff6a',
+                        color: '#ffc107',
+                        fillColor: '#ffc107',
                         fillOpacity: 0.9,
                         weight: 2,
                       }}
@@ -592,7 +592,7 @@ export function MapaMarte({
                 pathOptions={{ color: '#ffd2a8', fillColor: '#ff8a2b', fillOpacity: 0.95, weight: 2 }}
               >
                 <Tooltip>
-                  Chihuahua - Nodo principal de remediacion
+                  Chihuahua - Nodo principal de remediación
                 </Tooltip>
               </CircleMarker>
               <Circle
@@ -600,7 +600,7 @@ export function MapaMarte({
                 radius={45000}
                 pathOptions={{ color: '#5af7cf', fillColor: '#5af7cf', fillOpacity: 0.08, weight: 2 }}
               >
-                <Tooltip>Zona piloto de monitoreo y fitorremediacion</Tooltip>
+                <Tooltip>Zona piloto de monitoreo y fitorremediación</Tooltip>
               </Circle>
             </>
           )}
@@ -610,10 +610,10 @@ export function MapaMarte({
           <span>Modo: {config.label}</span>
           <span>Robots: {capasRobots.length}</span>
           <span>Rutas: {capasRutas.length}</span>
-          <span>Biopolimeros: {capasBiopolimeros.length}</span>
+          <span>Biopolímeros: {capasBiopolimeros.length}</span>
           {generatedRoute && <span>Ruta: {routeStatus}</span>}
           {generatedRoute && <span>Sim: x{simulationTimeScale}</span>}
-          <span>Ultima actualizacion: {lastUpdate || '---'}</span>
+          <span>Última actualización: {lastUpdate || '---'}</span>
         </div>
       </div>
 
@@ -651,7 +651,7 @@ export function MapaMarte({
 
                   <button
                     type="button"
-                    className="route-chip-delete"
+                    className="btn-soft small ghost"
                     onClick={() => deleteRoute(ruta.id)}
                     aria-label={`Eliminar ruta ${ruta.id}`}
                   >

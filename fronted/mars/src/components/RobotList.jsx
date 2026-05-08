@@ -150,8 +150,8 @@ export function RobotList({ onCreateRobot = () => {}, onShowRoutes = () => {}, o
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Estado</th>
-                <th>Posicion</th>
-                <th>Bateria</th>
+                <th>Posición</th>
+                <th>Batería</th>
                 <th>Acciones</th>
               </tr>
             </thead>
